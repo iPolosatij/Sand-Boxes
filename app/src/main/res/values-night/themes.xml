@@ -1,0 +1,118 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.SandBoxes" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/blue</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="LibAppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/dark_blue</item>
+        <item name="android:colorBackground">@android:color/background_light</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
+        <item name="tabStyle">@style/PickerTabLayout</item>
+    </style>
+
+    <style name="LibAppTheme.Dark" parent="LibAppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@android:color/white</item>
+        <item name="toolbarStyle">@style/ToolbarTheme.Dark</item>
+        <item name="tabStyle">@style/PickerTabLayout.Dark</item>
+    </style>
+
+    <style name="PickerTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <!--        tab background-->
+        <item name="tabBackground">@color/colorPrimary</item>
+        <!--        tab text color selector : set selector accordingly to dark or light theme-->
+        <item name="tabTextColor">@color/selector_tab_text_color</item>
+        <!--        tab indicator color: set indicator color accordingly-->
+        <item name="tabIndicatorColor">@color/dark_blue</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMaxWidth">0dp</item>
+    </style>
+
+
+    <style name="ToolbarTheme" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar.Light</item>
+        <item name="android:theme">@style/ThemeOverlay.App.Toolbar.Light</item>
+    </style>
+
+    <style name="SmoothCheckBoxStyle">
+        <item name="color_checked">@color/colorAccent</item>
+        <item name="color_unchecked">@android:color/white</item>
+        <item name="color_unchecked_stroke">@color/checkbox_unchecked_color</item>
+        <item name="color_tick">@color/gray</item>
+    </style>
+
+
+    <!-- -->
+    <color name="bg_gray">@color/lite_gray</color>
+    <color name="checkbox_color">@color/blue</color>
+    <color name="checkbox_unchecked_color">#DFDFDF</color>
+    <color name="colorAccent">@color/dark_blue</color>
+    <color name="colorPrimary">@color/lite_blue</color>
+    <color name="colorPrimaryDark">@color/blue</color>
+    <color name="row_active">@color/gray</color>
+    <color name="search_icon_color">@android:color/white</color>
+    <color name="transparent_black">#94333232</color>
+    <dimen name="file_icon_height">40dp</dimen>
+    <dimen name="file_icon_width">40dp</dimen>
+    <dimen name="file_item_checkbox_size">22dp</dimen>
+    <dimen name="file_name_textSize">17sp</dimen>
+    <drawable name="tab_gray">@color/bg_gray</drawable>
+    <drawable name="tab_white">@android:color/white</drawable>
+    <string name="action_settings">Settings</string>
+    <string name="all_files">All Files</string>
+    <string name="all_images">All Images</string>
+    <string name="all_photos">All Photos</string>
+    <string name="all_videos">All Videos</string>
+    <string formatted="false" name="attachments_num">%d</string>
+    <string formatted="false" name="attachments_title_text">(%d/%d)</string>
+    <string name="done">Done</string>
+    <string name="excel_title">XLS</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="images">Images</string>
+    <string name="no_camera_exists">No Application exists for camera!</string>
+    <string name="no_files_found">No Files Found</string>
+    <string name="pdf_title">PDF</string>
+    <string name="permission_filepicker_rationale">Storage permission is needed to access files.</string>
+    <string name="ppt_title">PPT</string>
+    <string name="select_doc_text">Select a document</string>
+    <string name="select_photo_text">Select a media</string>
+    <string name="txt_title">TXT</string>
+    <string name="videos">Videos</string>
+    <string name="word_title">DOC</string>
+
+    <style name="ThemeOverlay.App.Toolbar.Dark" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <!--        toolbar text and overflow menu color-->
+        <item name="colorOnPrimary">@android:color/white</item>
+    </style>
+    <style name="ThemeOverlay.App.Toolbar.Light" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <!--        toolbar text and overflow menu color-->
+        <item name="colorOnPrimary">@android:color/white</item>
+    </style>
+
+    <style name="ToolbarTheme.Dark" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar.Dark</item>
+        <item name="android:theme">@style/ThemeOverlay.App.Toolbar.Dark</item>
+    </style>
+    <declare-styleable name="SmoothCheckBox">
+        <attr format="integer" name="duration"/>
+        <attr format="dimension" name="stroke_width"/>
+        <attr format="color" name="color_tick"/>
+        <attr format="color" name="color_checked"/>
+        <attr format="color" name="color_unchecked"/>
+        <attr format="color" name="color_unchecked_stroke"/>
+    </declare-styleable>
+</resources>

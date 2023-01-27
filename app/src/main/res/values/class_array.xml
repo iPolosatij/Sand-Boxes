@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="class_array">
+        <item>Инстинктив</item>
+        <item>Лонгбоу</item>
+        <item>Исторический</item>
+        <item>Блочный</item>
+        <item>Арбалет</item>
+    </string-array>
+</resources>

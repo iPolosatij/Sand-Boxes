@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Sand Boxes</string>
+
+    <!--  Auth  -->
+    <string name="welcome">Welcome\nto ArcTour</string>
+    <!--^-->
+    <string name="login">Log In</string>
+    <string name="id_title">Enter your member ID</string>
+    <string name="member_id">Member ID</string>
+    <string name="pass_title">Enter your password</string>
+    <string name="member_pass">Password</string>
+    <string name="by_id">Log in by member ID</string>
+    <string name="by_phone_num">Log in by phone number</string>
+    <string name="forgot_pass_question">Forgot password?</string>
+    <string name="wrong_login_or_pass">Wrong login or password</string>
+    <string name="no_internet">No internet access</string>
+    <string name="not_found">User not found</string>
+
+    <!--^-->
+    <string name="registration">Register</string>
+    <string name="tel_title">Enter your phone number</string>
+    <string name="captcha_title">Turing No.</string>
+    <string name="next_text">Next</string>
+    <string name="confirm_title">Confirm\nthe number</string>
+    <string name="confirm">Confirm</string>
+    <string name="code_sent_message">The code was sent to</string>
+    <string name="send_code_again">Send code again</string>
+    <string name="wrong_captcha">The entered phone number or captcha is incorrect</string>
+    <string name="number_exist">This number is already in use</string>
+    <string name="wrong_pin">Wrong pin code</string>
+    <string name="time_resend_code">Send code again (%1$d sec)</string>
+
+
+    <!-- string util -->
+    <string name="step_club_ordinal_1">1st</string>
+    <string name="step_club_ordinal_2">2nd</string>
+    <string name="step_club_ordinal_3">3rd</string>
+    <string name="step_club_ordinal_other">%1$dth</string>
+
+    <!-- added from old -->
+    <string name="chat_message_notification_send_a_file">Sent a file</string>
+
+    <!-- main -->
+    <string name="title">Title</string>
+    <string name="notes">Notes</string>
+    <string name="workout">Workout</string>
+    <string name="tournament">Tournament</string>
+    <string name="profile">Profile</string>
+
+</resources>
