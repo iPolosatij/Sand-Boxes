@@ -10,6 +10,7 @@ import com.digitallabstudio.sandboxes.databinding.WelcomeFragmentBinding
 import com.digitallabstudio.sandboxes.presenter.base.navigation.NavMvvmFragment
 import com.digitallabstudio.sandboxes.presenter.screens.errors.ErrorModel
 import com.digitallabstudio.sandboxes.utils.extensions.collectWhenStarted
+import io.ak1.pix.helpers.color
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class WelcomeFragment: NavMvvmFragment<AppDestination, WelcomeViewModel>(R.layout.welcome_fragment) {
@@ -49,7 +50,32 @@ class WelcomeFragment: NavMvvmFragment<AppDestination, WelcomeViewModel>(R.layou
 
     private fun setUpBinding(){
         binding.apply {
+            val array = arrayListOf<Int>()
+            var counter = 0
+            while (counter < 99){
+                counter++
+                array.add(counter)
+            }
+            press.setOnClickListener {
+                try {
+                    if (enterText.text?.isNotEmpty() == true && enterText.text.toString().toInt() in 1..99){
+                        text.text = array.random().toString()
+                        text.setTextColor(requireActivity().color(R.color.black))
+                        if (enterText.text.toString().toInt() == text.text.toString().toInt()){
+                            hint.text = "Ваше число ${enterText.text} Поздравляю вы выиграли!"
+                        }else{
+                            hint.text = "Ваше число ${enterText.text} Неудачно, попробуйте снова ("
+                        }
+                        enterText.text?.clear()
+                    }else{
+                        text.text = "Необходимо ввести значение от 1 до 99"
+                        text.setTextColor(requireActivity().color(R.color.red))
+                    }
 
+                }catch (e: Exception){
+
+                }
+            }
         }
     }
 
