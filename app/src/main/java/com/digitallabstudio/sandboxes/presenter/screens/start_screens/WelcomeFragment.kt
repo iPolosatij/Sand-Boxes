@@ -41,7 +41,7 @@ class WelcomeFragment: NavMvvmFragment<AppDestination, WelcomeViewModel>(R.layou
 
             message.observe(viewLifecycleOwner) {
                 it.getFirstOrNull()?.let { message ->
-
+                    binding.timer.text = message
                 }
             }
         }
@@ -49,7 +49,20 @@ class WelcomeFragment: NavMvvmFragment<AppDestination, WelcomeViewModel>(R.layou
 
     private fun setUpBinding(){
         binding.apply {
+            start.setOnClickListener {
+                if (start.text == "Start"){
+                    start.text = "Stop"
+                    viewModel.startTimer()
+                }else{
+                    start.text = "Start"
+                    viewModel.stopTimer()
+                }
 
+            }
+            stop.setOnClickListener {
+                viewModel.counter = 0.00
+                timer.text = "0"
+            }
         }
     }
 
