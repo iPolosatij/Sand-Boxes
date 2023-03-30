@@ -5,6 +5,5 @@ import com.digitallabstudio.sandboxes.domain.model.Item
 
 class Bd_data(
     var id: String,
-): Item {
-
-}
+    var name: String = ""
+): Item
