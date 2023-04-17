@@ -13,6 +13,7 @@ import com.digitallabstudio.sandboxes.presenter.base.adapter.MultiItemsAdapter
 import com.digitallabstudio.sandboxes.presenter.base.navigation.NavMvvmFragment
 import com.digitallabstudio.sandboxes.presenter.screens.ListItem
 import com.digitallabstudio.sandboxes.presenter.screens.errors.ErrorModel
+import com.digitallabstudio.sandboxes.utils.ContactRepository
 import com.digitallabstudio.sandboxes.utils.extensions.collectWhenStarted
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -48,10 +49,17 @@ class WelcomeFragment: NavMvvmFragment<AppDestination, WelcomeViewModel>(R.layou
         viewModel.apply {
             navigateCommander.collectWhenStarted(viewLifecycleOwner, ::handlerDestination)
             error.collectWhenStarted(viewLifecycleOwner, ::handlerError)
+            saveListData(ContactRepository.getContacts(20))
 
             message.observe(viewLifecycleOwner) {
                 it.getFirstOrNull()?.let { message ->
+                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+                }
+            }
 
+            data.observe(viewLifecycleOwner) {
+                it.getFirstOrNull()?.let { data ->
+                    adapterList.submitList(data)
                 }
             }
         }
@@ -60,29 +68,6 @@ class WelcomeFragment: NavMvvmFragment<AppDestination, WelcomeViewModel>(R.layou
     private fun setUpBinding(){
         binding.apply {
             list.adapter = adapterList
-            var list = listOf(
-                Bd_data("1", "Alex"),
-                Bd_data("2", "Sergey"),
-                Bd_data("3", "Oleg"),
-                Bd_data("4", "Vitali"),
-                Bd_data("5", "Nik"),
-                Bd_data("6", "Anton"),
-                Bd_data("7", "Petr"),
-                Bd_data("8", "Alex"),
-                Bd_data("9", "Alex"),
-                Bd_data("10", "Alex"),
-                Bd_data("11", "Alex"),
-                Bd_data("12", "Alex"),
-                Bd_data("13", "Alex"),
-                Bd_data("14", "Alex"),
-                Bd_data("15", "Alex"),
-                Bd_data("16", "Alex"),
-                Bd_data("17", "Alex"),
-                Bd_data("18", "Alex"),
-                Bd_data("19", "Alex"),
-                Bd_data("20", "Alex")
-            )
-            adapterList.submitList(list)
         }
     }
 

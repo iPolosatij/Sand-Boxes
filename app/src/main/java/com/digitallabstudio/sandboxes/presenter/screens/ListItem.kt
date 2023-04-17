@@ -10,6 +10,7 @@ import com.digitallabstudio.sandboxes.databinding.ContactItemBinding
 import com.digitallabstudio.sandboxes.domain.model.Item
 import com.digitallabstudio.sandboxes.presenter.base.adapter.BaseItem
 import com.digitallabstudio.sandboxes.presenter.base.adapter.BaseViewHolder
+import com.squareup.picasso.Picasso
 
 class ListItem (
     private val onClickItem: (Bd_data) -> Unit,
@@ -59,6 +60,9 @@ class ListItem (
         fun setUpData(){
             binding.apply {
                 name.text = item.name
+                lastName.text = item.lastName
+                tel.text = item.tel
+                Picasso.get().load(item.avatar).into(avatar)
             }
         }
     }
